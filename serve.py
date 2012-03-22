@@ -13,6 +13,11 @@ def index():
 def hello(name=None):
     return render_template('hello.html', name=name)
 
+@app.route('/bye/')
+@app.route('/bye/<name>')
+def hello(name=None):
+    return render_template('bye.html', name=name)
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
